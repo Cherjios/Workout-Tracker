@@ -4,6 +4,7 @@ Workout tracker application that connects with a  Mongo database with a Mongoose
   [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/Naereen/ama)
 
 ## Deployed link
+-[https://workout-tracker-sergio.herokuapp.com/](https://workout-tracker-sergio.herokuapp.com/)
 
 
 ## Table of Contents
