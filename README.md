@@ -27,7 +27,7 @@ npm install
 
 ## Usage
 
-![workout-traker](workout-traker.gif)
+![workout-traker](workout-tracker.png)
 
 ## Technology
 * [Javascript](https://developer.mozilla.org/en-US/docs/Web/)
