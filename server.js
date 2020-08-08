@@ -18,14 +18,6 @@ app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/populatedb", { useNewUrlParser: true });
 
-db.User.create({ name: "Sergio Lopez" })
-  .then(dbUser => {
-    console.log(dbUser);
-  })
-  .catch(({ message }) => {
-    console.log(message);
-  });
-
   app.get("/", (req, res) => {
     db.Workout.find({})
       .then(dbWorkout => {
@@ -40,19 +32,35 @@ db.User.create({ name: "Sergio Lopez" })
     res.sendFile(path.join(__dirname, "./public/exercise.html"));
   });
 
-  app.post("/exercise", (req, res) => {
+  
+
+  app.get("/api/workouts", (req, res) => {
+    db.Workout.find({})
+      .then(dbWorkout => {
+        res.json(dbWorkout);
+      })
+      .catch(err => {
+        res.json(err);
+      });
+  });
+ 
+  app.post("/api/workouts", ({body}, res) => {
     //continue here
+    db.Workout.create(body)
+      .then(dbWorkout =>{
+        res.json(body);
+      })
+      .catch(err =>{
+        res.json(err);
+      });
   });
 
-//   app.get("/api/workouts", (req, res) => {
-//     db.Workout.find({})
-//       .then(dbWorkout => {
-//         res.json(dbWorkout);
-//       })
-//       .catch(err => {
-//         res.json(err);
-//       });
-//   });
+  app.post("/exercise", ({body}, res) => {
+    db.Book.create(body)
+      
+  });
+
+
 
 //   app.get("/api/workouts/id", (req, res) => {
 //     db.Workout.find({})
