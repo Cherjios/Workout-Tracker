@@ -23,5 +23,6 @@
   "bugs": {
     "url": "https://github.com/Cherjios/Workout-Tracker/issues"
   },
-  "homepage": "https://github.com/Cherjios/Workout-Tracker#readme"
+  "homepage": "https://github.com/Cherjios/Workout-Tracker#readme",
+  "devDependencies": {}
 }
