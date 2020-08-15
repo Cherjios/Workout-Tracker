@@ -16,7 +16,9 @@ app.put("/api/workouts/:id", (req, res) => {
         { $push: { exercises: req.body } }, { new: true })
         .then(function (workout) {
             console.log("update the workout", workout);
-            res.send(workout)
+            // res.send(workout)
+            res.json(workout);
+
         })
         .catch(function (err) {
             if (err) throw err
@@ -37,7 +39,8 @@ app.get("/api/workouts/range", function(req, res){
     Workout.find({}).limit(7)
     .then(function(workout){
         console.log("get", workout)
-        res.send(workout)
+        // res.send(workout)
+        res.json(workout);
     })
     .catch(function(err){
         if(err)throw err
